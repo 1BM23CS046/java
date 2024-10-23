@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+
+abstract class Shape {
+       abstract void printArea();
+}
+
+class Rectangle extends Shape {
+    int length, width;
+
+    Rectangle(int length, int width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    void printArea() {
+        System.out.println("Rectangle Area: " + (length * width));
+    }
+}
+
+class Triangle extends Shape {
+    int base, height;
+
+    Triangle(int base, int height) {
+        this.base = base;
+        this.height = height;
+    }
+
+    
+    void printArea() {
+        System.out.println("Triangle Area: " + (0.5 * base * height));
+    }
+}
+
+class Circle extends Shape {
+    int radius;
+
+    Circle(int radius) {
+        this.radius = radius;
+    }
+
+  
+    void printArea() {
+        System.out.println("Circle Area: " + (Math.PI * radius * radius));
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        
+        Shape rectangle = new Rectangle(5, 10);
+        Shape triangle = new Triangle(4, 7);
+       Shape circle = new Circle(6);
+
+        
+        rectangle.printArea();
+        triangle.printArea();
+        circle.printArea();
+    }
+}
